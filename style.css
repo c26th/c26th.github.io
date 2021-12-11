@@ -1,0 +1,914 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary: #EB5E28;
+    --dprim: #D95D2D;
+    --bggray: #f0f0f0;
+    --shadow: 1px 2px 6px lightgray;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    
+    50% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 100;
+    }
+}
+
+@keyframes hide {
+    from {
+        opacity: 100;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes rotate-cc {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+    font-size: 14pt;
+    width: 100%;
+    background-color: var(--bggray);
+    height: 100%;
+}
+
+p {
+    font-family: 'Open Sans';
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat';
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 1300px;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-50 {
+    flex-basis: 100%;
+}
+
+.row ul {
+    align-items: center;
+}
+
+.row ul li {
+    width: 20rem;
+}
+
+.cardrow {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: var(--shadow);
+    color: black;
+    font-family: 'Montserrat';
+    overflow: hidden;
+    text-decoration: none;
+    transition: 0.5s ease;
+    width: 200px;
+}
+
+.flatcard {
+    margin: 10px 0;
+    padding: 20px;
+    width: auto;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid lightgray;
+    color: black;
+    font-family: 'Montserrat';
+    overflow: hidden;
+    text-decoration: none;
+    transition: 0.5s ease;
+}
+
+.genrelist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 5px;
+}
+
+.rating {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    font-size: 35pt;
+    margin: 0;
+}
+
+.rating i {
+    font-size: 30pt;
+    color: #FFDB02;
+    position: relative;
+    top: -3px;
+}
+
+.plr {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.card:hover, .card:focus {
+    background-color: var(--primary);
+    color: white;
+    transform: scale(98%);
+}
+
+.lgn {
+    margin: 1rem;
+    width: 100vw;
+}
+
+.col-2 {
+    flex-basis: 50%;
+    transition: 0.5s ease;
+}
+
+.card-header {
+    font-family: 'Open Sans';
+    padding: 5rem 2rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    line-height: 0.6rem;
+}
+
+.card-header h1 {
+    font-weight: 900;
+    font-size: 40pt;
+}
+
+.card .card-body {
+}
+
+.card .card-body img {
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+.card:hover img {
+    border-radius: 10px;
+    transform: scale(90%);
+    opacity: 0.5;
+}
+
+.card-footer {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.card-footer .details {
+    padding: 0;
+    line-height: 1rem;
+}
+
+.card-footer .details .title {
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1rem;
+    font-size: 12pt;
+    transition: 0.5s ease;
+    font-family: 'Montserrat';
+}
+
+.card-footer .details .author {
+    font-size: 11pt;
+    color: gray;
+}
+
+.card:hover .author {
+    color: white;
+}
+
+.card-footer .rating {
+    flex-basis: 40%;
+    font-weight: 700;
+}
+
+.card-footer .rating .star {
+    color: #FFDD10;
+    font-size: 14pt;
+    filter: drop-shadow(0 0 4px lightgray);
+    padding-left: 5px;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.field {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 1rem;
+    font-family: 'Montserrat';
+    font-size: 12pt;
+    width: auto;
+    margin: 5px 0;
+    transition: 0.5s ease;
+    outline: none;
+    background-color: white;
+}
+
+.field:focus, .field:hover {
+    border: 3px solid var(--primary);
+    box-shadow: var(--shadow);
+    font-size: 13pt;
+}
+
+input[type="submit"] {
+    background-color: var(--primary);
+    outline: none;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-size: 16pt;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    width: auto;
+    padding: 1rem;
+    color: white;
+    border: none;
+    transition: 0.5s ease;
+}
+
+input[type="submit"]:hover, input[type="submit"]:focus {
+    box-shadow: var(--shadow);
+    background-color: var(--dprim);
+    font-size: 17pt;
+}
+
+.wrapper .error-box {
+    background-color: #FF402F;
+    color: white;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    border-radius: 4px;
+    display: none;
+    font-weight: 700;
+    transition: 0.5s ease;
+    font-variant-ligatures: none;
+}
+
+.show-me {
+    animation: show;
+    animation-duration: 1s;
+}
+
+.show-me-long {
+   animation: show;
+   animation-duration: 1.5s;
+}
+
+.hide-me {
+    animation: hide;
+    animation-duration: 1s;
+}
+
+.menu-btn {
+    border: 1px solid lightgray;
+    background-color: white;
+    color: black;
+    margin: 10px 10px 10px 1rem;
+    border-radius: 10px;
+    padding: 6px;
+    display: flex;
+    flex-direction: row;
+    width: 6rem;
+    height: auto;
+    align-items: center;
+    box-shadow: var(--shadow);
+    transition: 0.5s ease;
+    font-size: 14pt;
+    position: fixed;
+    z-index: 100;
+}
+
+.menu-btn:hover, .sbar .sbar-header .menu-btn:focus {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 700;
+    font-size: 16pt;
+    border: 0 solid transparent;
+    box-shadow: var(--shadow);
+    width: 7rem;
+}
+
+.menu-btn i {
+    flex-basis: 10%;
+    font-size: 21pt;
+    padding-right: 5px;
+    font-weight: 300;
+    transition: 0.3s ease;
+}
+
+.menu-btn i:hover, .menu-btn i:focus {
+    font-size: 23pt;
+    color: white;
+}
+
+.sbar {
+    box-shadow: var(--shadow);
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 90;
+    left: 0;
+    top: 0;
+    transform: translate3d(-100vw, 0, 0);
+    transition: 0.5s ease;
+    padding-top: 60px;
+}
+
+.sbar-header {
+    margin: 2rem;
+}
+
+.sbar-header #compname {
+    font-size: 25pt;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    color: var(--primary);
+    visibility: visible;
+}
+
+.sbar-body {
+    width: 100%;
+}
+
+.sbar-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.sbar-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.sbar-list li {
+    padding: 5px 0;
+    width: 100%;
+}
+
+.menu-item {
+    display: block;
+    background-color: white;
+    width: 70%;
+    height: 1.5rem;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--primary);
+    padding: 1rem 0;
+    font-family: 'Montserrat';
+    border-radius: 0 20px 20px 0;
+    font-size: 16pt;
+    font-weight: 600;
+    transition: 0.5s ease;
+    box-shadow: var(--shadow);
+}
+
+.menu-item i {
+    padding: 0 18px;
+    font-size: 17pt;
+}
+
+.menu-item:focus, .menu-item:hover, .menu-item.active {
+    background-color: var(--primary);
+    box-shadow: var(--shadow);
+    color: white;
+    font-weight: 700;
+    width: 70%;
+    font-size: 17pt;
+}
+
+.menu-text {
+    display: inline;
+}
+
+.mt {
+    margin-top: 4rem;
+}
+
+.mts {
+    margin-top: 1rem;
+}
+
+.lhm {
+    line-height: 3rem;
+}
+
+.hero {
+    padding: 2rem 20px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    margin: 1rem;
+    line-height: 3rem;
+}
+
+.mlr {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.wh {
+}
+
+.hero p, .hero b {
+    font-family: 'Montserrat';
+    font-size: 16pt;
+    line-height: 2rem;
+    filter: drop-shadow(0 0 5px var(--primary));
+}
+
+.hero h1 {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    filter: drop-shadow(0 0 5px var(--primary));
+    font-size: 30pt;
+}
+
+.qlinks {
+    width: 100%;
+    margin: 0.3rem 1rem;
+    padding: 1rem;
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 10px;
+    overflow-x: hidden;
+}
+
+.qlinks h5 {
+    color: black;
+    font-weight: 300;
+    font-size: 12pt;
+    padding: 0;
+    text-align: center;
+    font-family: 'Montserrat';
+    margin: 0;
+}
+
+.flex-row {
+    display: flex;
+    margin: none;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pill, .pillbtn {
+    border-radius: 25px;
+    border: 1px solid lightgray;
+    padding: 0.8rem;
+    font-family: 'Montserrat';
+    text-align: left;
+    color: black;
+    font-size: 10pt;
+    transition: 0.5s ease;
+    word-wrap: nowrap;
+    text-align: center;
+    margin: 0;
+    width: auto;
+    text-decoration: none;
+}
+
+.ml {
+    margin-left: 0;
+}
+
+.mtb {
+    margin-top: 20rem;
+}
+
+.wf {
+    background-color: white;
+    width: 100%;
+}
+
+.pillbtn {
+    width: 100%;
+    background-color: white;
+    position: relative;
+    top: 1.5rem;
+    left: 1rem;
+}
+
+.pill:hover, .pill:focus {
+    box-shadow: var(--shadow);
+    background-color: var(--primary);
+    color: white;
+    font-size: 13pt;
+    font-weight: 700;
+}
+
+.pillbtn:hover {
+    box-shadow: var(--shadow);
+    background-color: white;
+    color: var(--primary);
+    font-size: 16pt;
+    font-weight: 900;
+}
+
+.fbe {
+    flex-basis: 80%;
+}
+
+.fbt {
+    flex-basis: 20%;
+}
+
+/**  CAROUSEL **/
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    z-index: 1;
+    margin-top: 4rem;
+}
+
+.carousel .slide {
+    z-index: 1;
+    width: 100%;
+    height: 180px;
+    position: absolute;
+    border-radius: 10px;
+    overflow: hidden;
+    clip-path: circle(0 at 0 50%);
+}
+
+.carousel .slide.active-slide {
+    clip-path: circle(100% at 50% 60%);
+    transition: 2s ease;
+    transition-property: clip-path;
+}
+
+.carousel .slide img {
+    z-index: 1;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel .slide .info {
+    position: absolute;
+    top: 0;
+    font-size: 10pt;
+    margin: 1rem;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(1px);
+}
+
+.carousel .slide .info h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.carousel .slide .info .copyright {
+    font-size: 8pt;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.copyright a {
+    color: white;
+    font-weight: 900;
+}
+
+.carousel .navigation {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    background-color: black;
+    border-radius: 4px;
+    top: 190px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s ease;
+    width: auto;
+    justify-content: center;
+}
+
+.carousel .navigation:hover {
+    background-color: black;
+}
+
+.carousel .navigation .btn {
+    background-color: rgba(255,255,255, 0.5);
+    width: 10px;
+    height:10px;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s ease;
+}
+
+.carousel .navigation .btn.active-btn {
+    width: 30px;
+    background-color: white;
+}
+
+.carousel .navigation .btn:hover {
+    width: 30px;
+    background-color: white;
+}
+
+.smt {
+    margin-top: 15rem;
+}
+
+.mmt {
+    margin-top: 40px;
+}
+
+.nop {
+    padding: 0;
+}
+
+.loading {
+    color: var(--primary);
+    font-weight: 900;
+    font-size: 30pt;
+    height: 400px;
+    animation: rotate-cc;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.flatcard h1, .h1 {
+    color: var(--primary);
+    font-weight: 900;
+}
+
+.cover {
+    width: 100%;
+}
+
+.link {
+    color: white;
+    backdrop-filter: blur(5px);
+    font-weight: 900;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 14pt;
+    background-color: transparent;
+    padding: 15px;
+    border-radius: 5px;
+    width: 60%;
+    transition: 0.5s ease;
+    border: 5px solid var(--primary);
+}
+
+.link:focus, .link:hover {
+    font-size: 13pt;
+    font-weight: 900;
+    color: white;
+    padding: 10px 5px;
+    border: none;
+    background-color: var(--primary);
+}
+
+.volno {
+    font-size: 18pt;
+    width: 50%;
+    vertical-align: center;
+}
+
+.link {
+    width: 50%;
+    font-size: 10pt;
+    padding: 5px;
+    border: 3px solid var(--primary);
+}
+
+.flexiblerow {
+    display: flex;
+    flex-direction: row;
+}
+
+.commentary {
+    width: 93.5%;
+}
+
+.cmmt {
+    width: 100%;
+}
+.w100 {
+    width: 93.5%;
+    padding: 15px 10px;
+    margin: 5px 0;
+}
+
+.sh {
+    box-shadow: var(--shadow);
+}
+
+.button {
+    width: 100%;
+    background-color: var(--primary);
+    padding: 10px 20px;
+    font-weight: 900;
+    font-size: 15pt;
+    font-family: 'Montserrat';
+}
+
+@media screen and (min-width: 640px) {
+    
+    .lgn {
+        margin: 5rem;
+        width: 50vw;
+    }
+    
+    .flexiblerow {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .genrelist {
+        gap: 10px 0;
+    }
+    
+    .sbar {
+        width: 8vw;
+        transform: translate3d(0, 0, 0);
+    }
+    
+    #menubtn-txt {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 40pt;
+    }
+    
+    .volno {
+        font-size: 18pt;
+        width: 50%;
+    }
+    
+    .link {
+        width: 50%;
+        font-size: 10pt;
+        padding: 5px;
+        border: 3px solid var(--primary);
+    }
+    
+    .mlr {
+        margin-left: 6rem;
+        margin-right: 1rem;
+    }
+    
+    .menu-btn {
+        width: 2.5rem;
+        text-align: center;
+        box-shadow: none;
+        margin: 10px;
+    }
+    
+    .flatcard {
+        margin: 10px;
+    }
+    
+    .col-50 {
+        flex-basis: 50%;
+    }
+    
+    #menu-icon {
+        font-size: 27pt;
+    }
+    
+    .menu-item {
+        width: 70%;
+        font-size: 14pt;
+    }
+    
+    .menu-text {
+        display: none;
+    }
+    
+    .sbar-header #compname {
+        visibility: hidden;
+        font-size: 22pt;
+    }
+    
+    .hero {
+        margin-left: 10vw;
+        margin-top: 1rem;
+    }
+    
+    .card {
+        width: 25%;
+    }
+    
+    .ml {
+        margin-left: 6rem;
+    }
+    .mt {
+        margin-top: 0;
+    }
+    
+    .qlinks, .carousel {
+        margin-left: 10vw;
+    }
+    
+    .carousel {
+        margin-top: 10px;
+    }
+    
+    .carousel .slide {
+        height: 400px;
+    }
+    
+    .carousel .slide .info {
+        font-size: 16pt;
+        padding: 10px 30px;
+        width: 50%;
+        background-color: rgba(0,0,0,0.3);
+    }
+    
+    .carousel .navigation {
+        top: 350px;
+        left: 50%;
+        width: 10%;
+        background-color: rgba(0,0,0,0.4);
+    }
+    
+    .carousel .navigation:hover {
+        background-color: rgba(0,0,0.6);
+        width: 12%;
+    }
+    
+    .flex-row {
+        flex-direction: row;
+    }
+    
+    .pill {
+        margin: 0 10px;
+    }
+    
+    .smt {
+        margin-top: 25rem;
+    }
+    
+    .row ul li {
+        background-color: yellow;
+    }
+    
+    .loading {
+        height: 500px;
+    }
+}
